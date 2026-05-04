@@ -1,79 +1,58 @@
 # AEGIS RISK STUDIO // SECURITY ASSESSMENT TERMINAL
-// 21CSC308T: SECURITY RISK MANAGEMENT PRINCIPLES
 
 --------------------------------------------------------------------------------
 [+] ACADEMIC OVERVIEW
 --------------------------------------------------------------------------------
-SUBJECT CODE: 21CSC308T
-PROJECT TYPE: SECURITY RISK MANAGEMENT PRINCIPLES (SRMP)
-FACULTY:      DR. RAJALAKSHMI A [ID: 103554]
-INSTITUTION:  SRM INSTITUTE OF SCIENCE AND TECHNOLOGY
+SUBJECT CODE: 21CSC308T  //  FACULTY: DR. RAJALAKSHMI A  //  SRM UNIVERSITY
 
 [!] PROJECT TEAM:
     > GAURAV MISHRA [RA2311030010001]
     > RASHMIKA DAS  [RA2311030010239]
 
 --------------------------------------------------------------------------------
-[+] SYSTEM ARCHITECTURE & FEATURES
+[+] WHAT IS AEGIS RISK STUDIO?
 --------------------------------------------------------------------------------
-Aegis Risk Studio is a high-precision security management platform built with a 
-"Flat 3D" industrial design language. It is engineered for NIST-compliant risk 
-quantification and executive-level reporting.
+Aegis Risk Studio is a specialized Security Risk Management (SRM) platform designed 
+to translate complex cyber threats into actionable administrative data. It uses 
+a high-fidelity "Flat 3D" industrial design to provide a command-center experience.
 
-[01] // TACTICAL DASHBOARD
-     Real-time monitoring of risk distribution using optimized doughnut 
-     visualizations and 3D data modules.
-
-[02] // SYSTEM INVENTORY MANAGEMENT
-     Advanced asset tracking for servers, databases, and network hardware 
-     with integrated owner-assignment logic.
-
-[03] // QUANTITATIVE RISK SCORING
-     Mechanical calculation of threat levels using Likelihood [1-5] and 
-     Impact [1-5] matrices to generate severity-weighted risk scores.
-
-[04] // EXECUTIVE PDF GENERATION
-     Automated export of single-page technical snapshots using high-fidelity 
-     PDFKit integration, formatted for stakeholder review.
+- QUANTITATIVE SCORING: NIST-based calculation of Likelihood vs. Impact.
+- SYSTEM INVENTORY: Industrial-grade tracking for all hardware and software nodes.
+- EXECUTIVE REPORTING: One-click generation of professional single-page PDF snapshots.
+- TACTICAL ANALYTICS: Real-time risk distribution via 3D visualization modules.
 
 --------------------------------------------------------------------------------
-[+] TECHNICAL STACK
---------------------------------------------------------------------------------
-CORE_LOGIC:    React.js 18+ (Frontend Engine)
-STYLING:       Tailwind CSS (Custom Flat-3D Design System)
-BACKEND:       Node.js / Express.js (Security Middleware)
-DATABASE:      Better-SQLite3 (Local Persistent Storage)
-REPORTING:     PDFKit (Professional Document Generation)
-
---------------------------------------------------------------------------------
-[+] INITIALIZATION PROTOCOL
+[+] HOW TO INSTALL THE SYSTEM?
 --------------------------------------------------------------------------------
 
-[A] // REPOSITORY CLONING
-    git clone <repository-url>
-    cd SRMP
+[01] // ENVIRONMENT SETUP
+     Ensure Node.js (v16+) is installed on the host machine.
 
-[B] // BACKEND DEPLOYMENT
-    cd backend
-    npm install
-    node server.js
-    // Server active on port 5050
+[02] // BACKEND DEPLOYMENT
+     cd backend
+     npm install
+     node server.js
+     (Operational on http://localhost:5050)
 
-[C] // FRONTEND DEPLOYMENT
-    cd frontend
-    npm install
-    npm run dev
-    // Interface active on http://localhost:5173
-
---------------------------------------------------------------------------------
-[+] OPERATIONAL INSTRUCTIONS
---------------------------------------------------------------------------------
-1. Access the terminal at http://localhost:5173.
-2. Use [MANAGE SYSTEMS] to register new hardware or software assets.
-3. Use [RISK ASSESSMENT] to identify weaknesses and generate risk scores.
-4. Review the [SECURITY OVERVIEW] for real-time threat distribution.
-5. Execute [DOWNLOAD REPORT] to generate a professional themed PDF.
+[03] // FRONTEND DEPLOYMENT
+     cd frontend
+     npm install
+     npm run dev
+     (Operational on http://localhost:5173)
 
 --------------------------------------------------------------------------------
-// END OF DOCUMENT // AEGIS SECURITY INTEL // 2026
+[+] WHERE TO ACCESS & OPERATE?
+--------------------------------------------------------------------------------
+
+[URL] // MAIN TERMINAL
+     Access the production interface at: http://localhost:5173
+
+[OPS] // CORE WORKFLOW
+     - STEP 1: Register systems in [MANAGE SYSTEMS]
+     - STEP 2: Assess threats in [RISK ASSESSMENT]
+     - STEP 3: Monitor posture in [SECURITY OVERVIEW]
+     - STEP 4: Generate intel via [DOWNLOAD REPORT]
+
+--------------------------------------------------------------------------------
+// END OF DOCUMENT // SRMP PROJECT 2026 // GAURAV & RASHMIKA
 --------------------------------------------------------------------------------
