@@ -1,58 +1,88 @@
-# AEGIS RISK STUDIO // SECURITY ASSESSMENT TERMINAL
+# Aegis Risk Studio - Security Risk Management Platform
 
---------------------------------------------------------------------------------
-[+] ACADEMIC OVERVIEW
---------------------------------------------------------------------------------
-SUBJECT CODE: 21CSC308T  //  FACULTY: DR. RAJALAKSHMI A  //  SRM UNIVERSITY
+This project was developed for the **Security Risk Management Principles (21CSC308T)** course at SRM Institute of Science and Technology. It is a comprehensive tool for identifying, assessing, and reporting cyber security risks using NIST-aligned methodologies.
 
-[!] PROJECT TEAM:
-    > GAURAV MISHRA [RA2311030010001]
-    > RASHMIKA DAS  [RA2311030010239]
+---
 
---------------------------------------------------------------------------------
-[+] WHAT IS AEGIS RISK STUDIO?
---------------------------------------------------------------------------------
-Aegis Risk Studio is a specialized Security Risk Management (SRM) platform designed 
-to translate complex cyber threats into actionable administrative data. It uses 
-a high-fidelity "Flat 3D" industrial design to provide a command-center experience.
+## 👥 Academic Information
+*   **Subject:** 21CSC308T Security Risk Management Principles
+*   **Faculty:** Dr. Rajalakshmi A
+*   **Project Team:**
+    *   Gaurav Mishra [RA2311030010001]
+    *   Rashmika Das [RA2311030010239]
 
-- QUANTITATIVE SCORING: NIST-based calculation of Likelihood vs. Impact.
-- SYSTEM INVENTORY: Industrial-grade tracking for all hardware and software nodes.
-- EXECUTIVE REPORTING: One-click generation of professional single-page PDF snapshots.
-- TACTICAL ANALYTICS: Real-time risk distribution via 3D visualization modules.
+---
 
---------------------------------------------------------------------------------
-[+] HOW TO INSTALL THE SYSTEM?
---------------------------------------------------------------------------------
+## 🚀 Features
+*   **Risk Dashboard:** Quantitative visualization of total assets and threat distributions.
+*   **Asset Management:** Track hardware, software, and network nodes with cost analysis.
+*   **Quantitative Assessment:** Likelihood vs. Impact scoring (1-5 scale) to determine risk severity.
+*   **Executive Reporting:** Generate a professional, single-page PDF security snapshot.
+*   **Flat 3D UI:** A clean, industrial interface designed for professional security environments.
 
-[01] // ENVIRONMENT SETUP
-     Ensure Node.js (v16+) is installed on the host machine.
+---
 
-[02] // BACKEND DEPLOYMENT
-     cd backend
-     npm install
-     node server.js
-     (Operational on http://localhost:5050)
+## ⚙️ How to Run on Local Machine
 
-[03] // FRONTEND DEPLOYMENT
-     cd frontend
-     npm install
-     npm run dev
-     (Operational on http://localhost:5173)
+To access and use this application locally, you must run **both** the Backend and Frontend servers simultaneously.
 
---------------------------------------------------------------------------------
-[+] WHERE TO ACCESS & OPERATE?
---------------------------------------------------------------------------------
+### 📋 Prerequisites
+*   **Node.js** (v16.0 or higher) installed on your machine.
+*   **npm** (Node Package Manager) included with Node.js.
 
-[URL] // MAIN TERMINAL
-     Access the production interface at: http://localhost:5173
+### Step 1: Clone the Repository
+```bash
+git clone https://github.com/mishragaurav08/SRMP.git
+cd SRMP
+```
 
-[OPS] // CORE WORKFLOW
-     - STEP 1: Register systems in [MANAGE SYSTEMS]
-     - STEP 2: Assess threats in [RISK ASSESSMENT]
-     - STEP 3: Monitor posture in [SECURITY OVERVIEW]
-     - STEP 4: Generate intel via [DOWNLOAD REPORT]
+### Step 2: Start the Backend Server (Port 5050)
+The backend handles the database and report generation.
+1. Open a new terminal window.
+2. Navigate to the backend directory:
+   ```bash
+   cd backend
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+4. Start the server:
+   ```bash
+   node server.js
+   ```
+   *The backend is now active at http://localhost:5050*
 
---------------------------------------------------------------------------------
-// END OF DOCUMENT // SRMP PROJECT 2026 // GAURAV & RASHMIKA
---------------------------------------------------------------------------------
+### Step 3: Start the Frontend Interface (Port 5173)
+The frontend provides the user interface you interact with.
+1. Open **another** new terminal window (keep the backend one running).
+2. Navigate to the frontend directory:
+   ```bash
+   cd frontend
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+4. Start the development server:
+   ```bash
+   npm run dev
+   ```
+   *The interface is now active at http://localhost:5173*
+
+---
+
+## 📖 Access & Operation
+Once both servers are running:
+1. Open your browser and go to **[http://localhost:5173](http://localhost:5173)**.
+2. Go to **Manage Systems** to add your infrastructure items.
+3. Use **Risk Assessment** to identify threats and calculate their severity.
+4. Click **Download Report** on the Dashboard to export your data as a professional PDF.
+
+---
+
+## 🛠️ Tech Stack
+*   **Frontend:** React.js, Tailwind CSS, Chart.js
+*   **Backend:** Node.js, Express.js
+*   **Database:** Better-SQLite3
+*   **PDF Engine:** PDFKit
