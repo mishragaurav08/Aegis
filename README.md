@@ -1,88 +1,96 @@
-# Aegis Risk Studio - Security Risk Management Platform
+# Aegis Risk Studio: Security Risk Management & Assessment Platform
 
-This project was developed for the **Security Risk Management Principles (21CSC308T)** course at SRM Institute of Science and Technology. It is a comprehensive tool for identifying, assessing, and reporting cyber security risks using NIST-aligned methodologies.
+## Project Overview
+Aegis Risk Studio is a comprehensive security management tool developed for quantitative risk assessment and asset tracking. The platform aligns with NIST risk management frameworks to provide stakeholders with a clear, data-driven overview of their security posture. It translates technical vulnerabilities into prioritized risk scores, enabling informed decision-making and efficient mitigation planning.
 
 ---
 
-## 👥 Academic Information
+## Academic Information
 *   **Subject:** 21CSC308T Security Risk Management Principles
 *   **Faculty:** Dr. Rajalakshmi A
-*   **Project Team:**
+*   **Institution:** SRM Institute of Science and Technology
+*   **Team Members:** 
     *   Gaurav Mishra [RA2311030010001]
     *   Rashmika Das [RA2311030010239]
 
 ---
 
-## 🚀 Features
-*   **Risk Dashboard:** Quantitative visualization of total assets and threat distributions.
-*   **Asset Management:** Track hardware, software, and network nodes with cost analysis.
-*   **Quantitative Assessment:** Likelihood vs. Impact scoring (1-5 scale) to determine risk severity.
-*   **Executive Reporting:** Generate a professional, single-page PDF security snapshot.
-*   **Flat 3D UI:** A clean, industrial interface designed for professional security environments.
+## Core Functionalities
+
+### 1. Security Dashboard
+A centralized command center providing real-time visualization of risk metrics. It utilizes dynamic data modules to display asset counts, threat severity distributions, and overall system health.
+
+### 2. Asset Inventory Management
+A robust management system for tracking critical infrastructure including servers, databases, workstations, and applications. Features include cost assessment, ownership assignment, and operational status tracking.
+
+### 3. Quantitative Risk Assessment
+An automated scoring engine that calculates risk levels based on Likelihood and Impact matrices (1-5 scale). This ensures objective prioritization of security weaknesses and technical vulnerabilities.
+
+### 4. Automated Executive Reporting
+A specialized reporting engine that generates high-fidelity, single-page PDF summaries. These reports are designed for executive review, highlighting critical threats and recommended action plans.
 
 ---
 
-## ⚙️ How to Run on Local Machine
+## Technical Stack
 
-To access and use this application locally, you must run **both** the Backend and Frontend servers simultaneously.
+| Component | Technology |
+| :--- | :--- |
+| **Frontend** | React.js (v18+), Tailwind CSS |
+| **Backend** | Node.js, Express.js |
+| **Database** | Better-SQLite3 |
+| **Reporting Engine** | PDFKit |
+| **Data Visualization** | Chart.js |
 
-### 📋 Prerequisites
-*   **Node.js** (v16.0 or higher) installed on your machine.
-*   **npm** (Node Package Manager) included with Node.js.
+---
 
-### Step 1: Clone the Repository
+## Installation and Local Execution
+
+To run the Aegis Risk Studio locally, you must initialize both the backend and frontend services in parallel.
+
+### Prerequisites
+*   Node.js (v16.0 or higher)
+*   npm (Node Package Manager)
+
+### Step 1: Repository Initialization
 ```bash
 git clone https://github.com/mishragaurav08/SRMP.git
 cd SRMP
 ```
 
-### Step 2: Start the Backend Server (Port 5050)
-The backend handles the database and report generation.
-1. Open a new terminal window.
-2. Navigate to the backend directory:
+### Step 2: Backend Service Configuration
+1. Open a terminal and navigate to the backend directory:
    ```bash
    cd backend
    ```
-3. Install dependencies:
+2. Install the necessary dependencies:
    ```bash
    npm install
    ```
-4. Start the server:
+3. Initialize the server:
    ```bash
    node server.js
    ```
-   *The backend is now active at http://localhost:5050*
+   *The backend service will be active at http://localhost:5050*
 
-### Step 3: Start the Frontend Interface (Port 5173)
-The frontend provides the user interface you interact with.
-1. Open **another** new terminal window (keep the backend one running).
-2. Navigate to the frontend directory:
+### Step 3: Frontend Interface Deployment
+1. Open a second terminal and navigate to the frontend directory:
    ```bash
    cd frontend
    ```
-3. Install dependencies:
+2. Install the necessary dependencies:
    ```bash
    npm install
    ```
-4. Start the development server:
+3. Initialize the development environment:
    ```bash
    npm run dev
    ```
-   *The interface is now active at http://localhost:5173*
+   *The application interface will be accessible at http://localhost:5173*
 
 ---
 
-## 📖 Access & Operation
-Once both servers are running:
-1. Open your browser and go to **[http://localhost:5173](http://localhost:5173)**.
-2. Go to **Manage Systems** to add your infrastructure items.
-3. Use **Risk Assessment** to identify threats and calculate their severity.
-4. Click **Download Report** on the Dashboard to export your data as a professional PDF.
-
----
-
-## 🛠️ Tech Stack
-*   **Frontend:** React.js, Tailwind CSS, Chart.js
-*   **Backend:** Node.js, Express.js
-*   **Database:** Better-SQLite3
-*   **PDF Engine:** PDFKit
+## Operational Workflow
+1. **Asset Registration:** Navigate to the "Manage Systems" section to populate the inventory.
+2. **Threat Mapping:** Use the "Risk Assessment" tool to identify vulnerabilities and assign severity scores.
+3. **Data Analysis:** Review the "Security Overview" dashboard for real-time risk intelligence.
+4. **Reporting:** Execute the "Download Report" function to generate the final security snapshot.
