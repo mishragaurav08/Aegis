@@ -12,7 +12,10 @@ const initDb = () => {
       type TEXT,
       value INTEGER,
       owner TEXT,
-      description TEXT
+      description TEXT,
+      confidentiality INTEGER DEFAULT 3,
+      integrity INTEGER DEFAULT 3,
+      availability INTEGER DEFAULT 3
     );
 
     CREATE TABLE IF NOT EXISTS risks (
@@ -24,12 +27,15 @@ const initDb = () => {
       impact INTEGER,
       riskScore INTEGER,
       level TEXT,
-      mitigation TEXT
+      mitigation TEXT,
+      treatment TEXT DEFAULT 'Mitigate'
     );
 
     CREATE TABLE IF NOT EXISTS audit_logs (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
       action TEXT,
+      entity TEXT,
+      details TEXT,
       timestamp TEXT
     );
   `);

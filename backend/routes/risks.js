@@ -16,18 +16,28 @@ router.get('/', (req, res) => {
 
 // POST a new risk
 router.post('/', (req, res) => {
-  const { assetId, threat, vulnerability, likelihood, impact } = req.body;
+  const { assetId, threat, vulnerability, likelihood, impact, treatment } = req.body;
+  
+  // ROBUSTNESS: Basic validation
+  if (!assetId) {
+    return res.status(400).json({ error: 'Target asset is required.' });
+  }
+
   try {
-    const { riskScore, level } = calculateRisk(likelihood, impact);
+    const l = Math.min(5, Math.max(1, parseInt(likelihood) || 1));
+    const im = Math.min(5, Math.max(1, parseInt(impact) || 1));
+    
+    const { riskScore, level } = calculateRisk(l, im);
     const mitigation = getMitigation(threat);
 
     const info = db.prepare(
-      'INSERT INTO risks (assetId, threat, vulnerability, likelihood, impact, riskScore, level, mitigation) VALUES (?, ?, ?, ?, ?, ?, ?, ?)'
-    ).run(assetId, threat, vulnerability, likelihood, impact, riskScore, level, mitigation);
+      'INSERT INTO risks (assetId, threat, vulnerability, likelihood, impact, riskScore, level, mitigation, treatment) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)'
+    ).run(assetId, threat, vulnerability || 'Not Specified', l, im, riskScore, level, mitigation, treatment || 'Mitigate');
     
-    // Audit Log
-    db.prepare('INSERT INTO audit_logs (action, timestamp) VALUES (?, ?)').run(
-      `Risk created for asset ${assetId}: ${threat}`,
+    db.prepare('INSERT INTO audit_logs (action, entity, details, timestamp) VALUES (?, ?, ?, ?)').run(
+      'CREATE',
+      'RISK',
+      `Risk identified for asset ${assetId}: ${threat} (Level: ${level})`,
       new Date().toISOString()
     );
 
@@ -41,11 +51,13 @@ router.post('/', (req, res) => {
 router.delete('/:id', (req, res) => {
   const { id } = req.params;
   try {
+    const risk = db.prepare('SELECT threat FROM risks WHERE id = ?').get(id);
     db.prepare('DELETE FROM risks WHERE id = ?').run(id);
     
-    // Audit Log
-    db.prepare('INSERT INTO audit_logs (action, timestamp) VALUES (?, ?)').run(
-      `Risk deleted: ${id}`,
+    db.prepare('INSERT INTO audit_logs (action, entity, details, timestamp) VALUES (?, ?, ?, ?)').run(
+      'DELETE',
+      'RISK',
+      `Threat removed: ${risk ? risk.threat : 'ID ' + id}`,
       new Date().toISOString()
     );
 
