@@ -1,0 +1,14 @@
+node_modules/
+.DS_Store
+*.db
+*.log
+dist/
+build/
+.env
+*.pdf
+backend/database.db
+backend/test.pdf
+backend/test-report.js
+backend/test-assets.js
+frontend/node_modules/
+backend/node_modules/

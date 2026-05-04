@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;700;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #0B0E14;
+  --color-surface: #151921;
+  --color-primary: #39FF14;
+  --color-brand: #39FF14;
+  --color-accent: #00F2FF;
+  --color-danger: #FF3131;
+  --color-warning: #FFAC1C;
+  --color-border: #262B37;
+  --color-text: #F1F5F9;
+  
+  --font-orbitron: 'Orbitron', sans-serif;
+  --font-mono: 'Share Tech Mono', monospace;
+}
+
+@layer components {
+  .tech-select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2339FF14'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 0.8rem;
+    padding-right: 2rem;
+  }
+
+  .tech-btn {
+    @apply transition-all duration-100 active:translate-x-[2px] active:translate-y-[2px] active:shadow-none shadow-[4px_4px_0px_0px_rgba(0,0,0,0.8)] border-2 border-border font-bold uppercase tracking-widest text-[10px] p-2;
+  }
+
+  .panel-3d {
+    @apply bg-surface border-2 border-border shadow-[8px_8px_0px_0px_rgba(0,0,0,0.7)];
+  }
+
+  /* Specific Nav Hover Effect */
+  .nav-btn-hover {
+    @apply hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,0.8)] hover:border-primary hover:text-primary transition-all duration-200;
+  }
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-mono);
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-orbitron);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+input, select, textarea {
+  @apply bg-bg border-2 border-border p-2 text-[10px] text-text focus:border-primary outline-none transition-colors;
+}
+
+/* Custom Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border: 2px solid var(--color-bg);
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+}
+
+/* Entrance Animations */
+.animate-slide-up {
+  animation: slideUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0; 
+    transform: translateY(20px) scale(0.98); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0) scale(1); 
+  }
+}
