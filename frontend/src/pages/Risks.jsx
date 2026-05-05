@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { audioManager } from '../utils/audio';
+
 
 const API_URL = 'http://localhost:5050';
 
@@ -59,6 +61,7 @@ const Risks = () => {
     setLoading(true);
     try {
       await axios.post(`${API_URL}/risks`, formData);
+      audioManager.playSuccess();
       setFormData({ assetId: '', threat: 'Data Theft / Leak', vulnerability: '', likelihood: 1, impact: 1, treatment: 'Mitigate' });
       await fetchRisks();
     } catch (err) {
@@ -73,6 +76,7 @@ const Risks = () => {
     setLoading(true);
     try {
       await axios.delete(`${API_URL}/risks/${id}`);
+      audioManager.playAlert();
       await fetchRisks();
     } catch (err) {
       console.error(err);

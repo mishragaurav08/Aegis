@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { audioManager } from '../utils/audio';
 
 const API_URL = 'http://localhost:5050';
 
@@ -56,6 +57,8 @@ const Assets = () => {
       } else {
         await axios.post(`${API_URL}/assets`, submissionData);
       }
+      audioManager.playSuccess();
+
       setFormData({ 
         name: '', 
         type: 'Server', 
@@ -84,8 +87,10 @@ const Assets = () => {
     setLoading(true);
     try {
       await axios.delete(`${API_URL}/assets/${id}`);
+      audioManager.playAlert();
       await fetchAssets();
     } catch (err) {
+
       console.error("Delete Error:", err);
     } finally {
       setLoading(false);
